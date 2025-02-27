@@ -15,7 +15,7 @@
 int	has_duplicate(t_stack *stack, int num)
 {
 	t_stack	*current;
-	
+
 	current = stack;
 	while (current)
 	{
@@ -70,7 +70,10 @@ t_stack	*handle_arg(char *arg, t_stack *stack)
 		if (num > 2147483647 || num < -2147483648)
 			return (clean_up(NULL, numbers), NULL);
 		if (has_duplicate(stack, (int)num))
+		{
+			free_stack(&stack);
 			return (clean_up(NULL, numbers), NULL);
+		}
 		new = new_node((int)num);
 		if (!new)
 			return (clean_up(NULL, numbers), NULL);

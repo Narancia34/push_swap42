@@ -39,7 +39,8 @@ void	rrr(t_stack **stack_a, t_stack **stack_b)
 	ft_putstr_fd("rrr\n", 1);
 }
 
-void	push_to_stack(t_stack **src_stack, t_stack **dst_stack, char stack_index)
+void	push_to_stack(t_stack **src_stack, \
+	t_stack **dst_stack, char stack_index)
 {
 	t_stack	*first_block;
 

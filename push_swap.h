@@ -21,7 +21,7 @@
 
 typedef struct s_stack
 {
-	int		number;
+	int	number;
 	struct s_stack	*next;
 	struct s_stack	*prev;
 
@@ -39,5 +39,6 @@ void	rr(t_stack **stack_a, t_stack **stack_b);
 void	reverse_rotate_stack(t_stack **stack, char stack_index);
 void	rrr(t_stack **stack_a, t_stack **stack_b);
 void	push_to_stack(t_stack **src_stack, t_stack **dst_stack, char stack_index);
+void	free_stack(t_stack **stack);
 
 #endif

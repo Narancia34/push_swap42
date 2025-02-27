@@ -33,6 +33,11 @@ void	check_args(char *arg)
 	int		i;
 	int		j;
 
+	if (!arg || !arg[0])
+	{
+		printf("test_error\n");
+		exit(1);
+	}
 	s_arg = ft_split(arg, ' ');
 	i = 0;
 	while (s_arg[i])
@@ -45,7 +50,7 @@ void	check_args(char *arg)
 					j++;
 			if (s_arg[i][j] < '0' || s_arg[i][j] > '9')
 			{
-				printf("error!");
+				ft_putstr_fd("error\n", 2);
 				clean_up(NULL, s_arg);
 				exit(1);
 			}

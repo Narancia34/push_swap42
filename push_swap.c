@@ -12,27 +12,30 @@
 
 #include "push_swap.h"
 
-void free_stack(t_stack *stack)
+void	free_stack(t_stack **stack)
 {
-    t_stack *current;
-    t_stack *next;
+	t_stack	*current;
+	t_stack	*next;
 
-    current = stack;
-    while (current)
-    {
-        next = current->next;
-        free(current);
-        current = next;
-    }
+	if (!stack || !(*stack))
+		return ;
+	current = *stack;
+	while (current)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	*stack = NULL;
 }
 
-void print_stack(t_stack *stack)
+void	print_stack(t_stack *stack)
 {
-    while (stack)
-    {
-        printf("%d\n", stack->number);
-        stack = stack->next;
-    }
+	while (stack)
+	{
+		printf("%d\n", stack->number);
+		stack = stack->next;
+	}
 }
 
 int	stack_is_sorted(t_stack *stack)
@@ -54,8 +57,9 @@ int	stack_is_sorted(t_stack *stack)
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
-	t_stack	*stack_b = NULL;
+	t_stack	*stack_b;
 
+	stack_b = NULL;
 	check_input(ac, av);
 	stack_a = create_stack(ac, av);
 	if (!stack_a)
@@ -64,6 +68,12 @@ int	main(int ac, char **av)
 		return (1);
 	}
 	if (stack_is_sorted(stack_a))
+	{
+		free_stack(&stack_a);
+		free_stack(&stack_b);
 		return (0);
+	}
+	free_stack(&stack_a);
+	free_stack(&stack_b);
 	return (0);
 }
