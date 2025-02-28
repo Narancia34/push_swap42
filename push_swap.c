@@ -6,7 +6,7 @@
 /*   By: mgamraou <mgamraou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 10:34:42 by mgamraou          #+#    #+#             */
-/*   Updated: 2025/02/25 19:09:18 by mgamraou         ###   ########.fr       */
+/*   Updated: 2025/02/28 14:39:26 by mgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,11 +67,12 @@ int	main(int ac, char **av)
 		ft_putstr_fd("Error\n", 2);
 		return (1);
 	}
-	if (stack_is_sorted(stack_a))
+	if (!stack_is_sorted(stack_a))
 	{
-		free_stack(&stack_a);
-		free_stack(&stack_b);
-		return (0);
+		if (stack_len(stack_a) == 2)
+			swap_stack(&stack_a, 'a');
+		else if (stack_len(stack_a) == 3)
+			sort_three(&stack_a);
 	}
 	free_stack(&stack_a);
 	free_stack(&stack_b);

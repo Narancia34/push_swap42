@@ -27,15 +27,29 @@ void	clean_up(char *str, char **arr)
 	}
 }
 
+int	is_only_spaces(char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] != ' ' && str[i] != '\t')
+			return (0);
+		i++;
+	}
+	return (1);
+}
+
 void	check_args(char *arg)
 {
 	char	**s_arg;
 	int		i;
 	int		j;
 
-	if (!arg || !arg[0])
+	if (!arg || !arg[0] || is_only_spaces(arg))
 	{
-		printf("test_error\n");
+		printf("error\n");
 		exit(1);
 	}
 	s_arg = ft_split(arg, ' ');
