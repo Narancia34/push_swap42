@@ -6,7 +6,7 @@
 /*   By: mgamraou <mgamraou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 10:42:37 by mgamraou          #+#    #+#             */
-/*   Updated: 2025/02/28 15:02:41 by mgamraou         ###   ########.fr       */
+/*   Updated: 2025/02/28 19:05:40 by mgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ typedef struct s_stack
 }   t_stack;
 
 int	check_input(int ac, char **av);
+int	stack_is_sorted(t_stack *stack);
 void	clean_up(char *str, char **arr);
 t_stack	*create_stack(int ac, char **av);
 void	swap_stack(t_stack **stack, char stack_index);
@@ -48,5 +49,11 @@ t_stack	*get_min(t_stack *stack);
 t_stack	*get_max(t_stack *stack);
 void	sort_three(t_stack **stack);
 void	set_median_index(t_stack *stack);
+void	rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest);
+void	reverse_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest);
+void	prep_for_push(t_stack **stack, t_stack *top_node, char stack_index);
+void	initialize_a(t_stack *stack_a, t_stack *stack_b);
+void	initialize_b(t_stack *stack_a, t_stack *stack_b);
+void	sort_stack(t_stack **stack_a, t_stack **stack_b);
 
 #endif

@@ -73,7 +73,10 @@ int	main(int ac, char **av)
 			swap_stack(&stack_a, 'a');
 		else if (stack_len(stack_a) == 3)
 			sort_three(&stack_a);
+		else
+			sort_stack(&stack_a, &stack_b);
 	}
+	print_stack(stack_a);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

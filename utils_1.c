@@ -6,11 +6,23 @@
 /*   By: mgamraou <mgamraou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 13:51:16 by mgamraou          #+#    #+#             */
-/*   Updated: 2025/02/28 14:56:34 by mgamraou         ###   ########.fr       */
+/*   Updated: 2025/02/28 16:49:46 by mgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+t_stack	*last_node(t_stack *stack)
+{
+	t_stack	*res;
+
+	if (!stack)
+		return (NULL);
+	res = stack;
+	while (res->next)
+		res = res->next;
+	return (res);
+}
 
 t_stack	*get_max(t_stack *stack)
 {
