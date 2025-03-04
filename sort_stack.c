@@ -6,7 +6,7 @@
 /*   By: mgamraou <mgamraou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/28 14:39:44 by mgamraou          #+#    #+#             */
-/*   Updated: 2025/02/28 19:10:49 by mgamraou         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:54:25 by mgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ void	sort_stack(t_stack **stack_a, t_stack **stack_b)
 	while (*stack_b)
 	{
 		initialize_b(*stack_a, *stack_b);
-		push_to_a(stack_b, stack_a);
+		push_to_a(stack_a, stack_b);
 	}
 	set_median_index(*stack_a);
 	min_to_top(stack_a);

@@ -29,7 +29,7 @@ void	reverse_rotate_stack(t_stack **stack, char stack_index)
 	if (stack_index == 'a')
 		ft_putstr_fd("rra\n", 1);
 	else if (stack_index == 'b')
-		ft_putstr_fd("rrn\b", 1);
+		ft_putstr_fd("rrn\n", 1);
 }
 
 void	rrr(t_stack **stack_a, t_stack **stack_b)

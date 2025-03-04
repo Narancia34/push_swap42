@@ -6,52 +6,25 @@
 /*   By: mgamraou <mgamraou@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 10:34:42 by mgamraou          #+#    #+#             */
-/*   Updated: 2025/02/28 14:39:26 by mgamraou         ###   ########.fr       */
+/*   Updated: 2025/03/04 15:53:33 by mgamraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stack(t_stack **stack)
+void	clean_up(char *str, char **arr)
 {
-	t_stack	*current;
-	t_stack	*next;
+	int	i;
 
-	if (!stack || !(*stack))
-		return ;
-	current = *stack;
-	while (current)
+	if (str)
+		free(str);
+	if (arr)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		i = 0;
+		while (arr[i])
+			free(arr[i++]);
+		free(arr);
 	}
-	*stack = NULL;
-}
-
-void	print_stack(t_stack *stack)
-{
-	while (stack)
-	{
-		printf("%d\n", stack->number);
-		stack = stack->next;
-	}
-}
-
-int	stack_is_sorted(t_stack *stack)
-{
-	t_stack	*current;
-
-	if (!stack || !stack->next)
-		return (1);
-	current = stack;
-	while (current->next)
-	{
-		if (current->number > current->next->number)
-			return (0);
-		current = current->next;
-	}
-	return (1);
 }
 
 int	main(int ac, char **av)
@@ -76,7 +49,6 @@ int	main(int ac, char **av)
 		else
 			sort_stack(&stack_a, &stack_b);
 	}
-	print_stack(stack_a);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

@@ -36,6 +36,8 @@ t_stack	*new_node(int value)
 	node->number = value;
 	node->next = NULL;
 	node->prev = NULL;
+	node->target = NULL;
+	node->cheapest = 0;
 	return (node);
 }
 
@@ -68,7 +70,10 @@ t_stack	*handle_arg(char *arg, t_stack *stack)
 	{
 		num = atol(numbers[i]);
 		if (num > 2147483647 || num < -2147483648)
+		{
+			free_stack(&stack);
 			return (clean_up(NULL, numbers), NULL);
+		}
 		if (has_duplicate(stack, (int)num))
 		{
 			free_stack(&stack);
