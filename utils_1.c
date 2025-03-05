@@ -12,17 +12,17 @@
 
 #include "push_swap.h"
 
-t_stack	*last_node(t_stack *stack)
-{
-	t_stack	*res;
-
-	if (!stack)
-		return (NULL);
-	res = stack;
-	while (res->next)
-		res = res->next;
-	return (res);
-}
+/*t_stack	*last_node(t_stack *stack)*/
+/*{*/
+/*	t_stack	*res;*/
+/**/
+/*	if (!stack)*/
+/*		return (NULL);*/
+/*	res = stack;*/
+/*	while (res->next)*/
+/*		res = res->next;*/
+/*	return (res);*/
+/*}*/
 
 t_stack	*get_max(t_stack *stack)
 {

@@ -18,6 +18,7 @@
 # include <limits.h>
 # include <stdio.h>
 # include "./libft/libft.h"
+# include "get_next_line.h"
 
 typedef struct s_stack
 {
