@@ -36,6 +36,7 @@ int		check_input(int ac, char **av);
 int		stack_is_sorted(t_stack *stack);
 int		is_only_spaces(char *str);
 int		stack_len(t_stack *stack);
+long	ft_atol(char *str);
 void	is_empty(char *arg);
 void	not_a_number(int i, int j, char **s_arg);
 void	clean_up(char *str, char **arr);

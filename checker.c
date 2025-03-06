@@ -34,6 +34,7 @@ void	false_command(char *command, t_stack **a, t_stack **b)
 	free(command);
 	free_stack(a);
 	free_stack(b);
+	get_next_line(-1);
 	ft_putstr_fd("Error\n", 2);
 	exit(1);
 }

@@ -12,21 +12,6 @@
 
 #include "push_swap.h"
 
-void	clean_up(char *str, char **arr)
-{
-	int	i;
-
-	if (str)
-		free(str);
-	if (arr)
-	{
-		i = 0;
-		while (arr[i])
-			free(arr[i++]);
-		free(arr);
-	}
-}
-
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;

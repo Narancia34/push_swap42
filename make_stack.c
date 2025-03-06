@@ -60,13 +60,12 @@ void	add_to_stack(t_stack **stack, t_stack *new)
 t_stack	*handle_arg(char *arg, t_stack *stack)
 {
 	char	**numbers;
-	int		i;
 	long	num;
 	t_stack	*new;
 
 	numbers = ft_split(arg, ' ');
-	i = 0;
-	while (numbers[i])
+	int (i) = -1;
+	while (numbers[++i])
 	{
 		num = atol(numbers[i]);
 		if (num > 2147483647 || num < -2147483648)
@@ -83,10 +82,8 @@ t_stack	*handle_arg(char *arg, t_stack *stack)
 		if (!new)
 			return (clean_up(NULL, numbers), NULL);
 		add_to_stack(&stack, new);
-		i++;
 	}
-	clean_up(NULL, numbers);
-	return (stack);
+	return (clean_up(NULL, numbers), stack);
 }
 
 t_stack	*create_stack(int ac, char **av)
