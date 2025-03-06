@@ -32,11 +32,12 @@ void	reverse_rotate_stack(t_stack **stack, char stack_index)
 		ft_putstr_fd("rrn\n", 1);
 }
 
-void	rrr(t_stack **stack_a, t_stack **stack_b)
+void	rrr(t_stack **stack_a, t_stack **stack_b, int flag)
 {
 	reverse_rotate_stack(stack_a, 'r');
 	reverse_rotate_stack(stack_b, 'r');
-	ft_putstr_fd("rrr\n", 1);
+	if (flag == 1)
+		ft_putstr_fd("rrr\n", 1);
 }
 
 void	push_to_stack(t_stack **src_stack, \

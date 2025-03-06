@@ -48,7 +48,7 @@ int	stack_is_sorted(t_stack *stack)
 void	rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
 {
 	while ((*stack_b) != cheapest->target && (*stack_a) != cheapest)
-		rr(stack_a, stack_b);
+		rr(stack_a, stack_b, 1);
 	set_median_index(*stack_a);
 	set_median_index(*stack_b);
 }
@@ -56,7 +56,7 @@ void	rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
 void	reverse_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
 {
 	while ((*stack_b) != cheapest->target && (*stack_a) != cheapest)
-		rrr(stack_a, stack_b);
+		rrr(stack_a, stack_b, 1);
 	set_median_index(*stack_a);
 	set_median_index(*stack_b);
 }

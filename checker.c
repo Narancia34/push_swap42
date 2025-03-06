@@ -12,22 +12,21 @@
 
 #include "push_swap.h"
 
-int ft_strcmp(const char *s1, const char *s2)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-    size_t i;
+	size_t	i;
 
-    i = 0;
-    while (s1[i] && s2[i])
-    {
-        if (s1[i] != s2[i])
-            return (0);  // Not equal
-        i++;
-    }
-    // Both strings must end at the same position to be equal
-    if (s1[i] == '\0' && s2[i] == '\0')
-        return (1);  // Equal
-    else
-        return (0);  // Not equal
+	i = 0;
+	while (s1[i] && s2[i])
+	{
+		if (s1[i] != s2[i])
+			return (0);
+		i++;
+	}
+	if (s1[i] == '\0' && s2[i] == '\0')
+		return (1);
+	else
+		return (0);
 }
 
 void	false_command(char *command, t_stack **a, t_stack **b)
@@ -46,7 +45,7 @@ void	apply_command(char *command, t_stack **a, t_stack **b)
 	else if (ft_strcmp("sb\n", command))
 		swap_stack(b, 'x');
 	else if (ft_strcmp("ss\n", command))
-		ss(a, b);
+		ss(a, b, 0);
 	else if (ft_strcmp("pa\n", command))
 		push_to_stack(b, a, 'x');
 	else if (ft_strcmp("pb\n", command))
@@ -56,13 +55,13 @@ void	apply_command(char *command, t_stack **a, t_stack **b)
 	else if (ft_strcmp("rb\n", command))
 		rotate_stack(b, 'x');
 	else if (ft_strcmp("rr\n", command))
-		rr(a, b);
+		rr(a, b, 0);
 	else if (ft_strcmp("rra\n", command))
 		reverse_rotate_stack(a, 'x');
 	else if (ft_strcmp("rrb\n", command))
 		reverse_rotate_stack(b, 'x');
 	else if (ft_strcmp("rrr\n", command))
-		rrr(a, b);
+		rrr(a, b, 0);
 	else
 		false_command(command, a, b);
 }

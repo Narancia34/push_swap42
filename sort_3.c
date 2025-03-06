@@ -13,19 +13,6 @@
 
 #include "push_swap.h"
 
-/*void	sort_three(t_stack **stack)*/
-/*{*/
-/*	t_stack	*biggest_node;*/
-/**/
-/*	biggest_node = get_max(*stack);*/
-/*	if ((*stack)->number == biggest_node->number)*/
-/*		rotate_stack(stack, 'a');*/
-/*	else if ((*stack)->next->number == biggest_node->number)*/
-/*		reverse_rotate_stack(stack, 'a');*/
-/*	if ((*stack)->number > (*stack)->next->number)*/
-/*		swap_stack(stack, 'a');*/
-/*}*/
-/**/
 void	sort_three(t_stack **stack)
 {
 	t_stack	*highest_data;

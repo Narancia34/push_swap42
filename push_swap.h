@@ -40,11 +40,11 @@ void	is_empty(char *arg);
 void	not_a_number(int i, int j, char **s_arg);
 void	clean_up(char *str, char **arr);
 void	swap_stack(t_stack **stack, char stack_index);
-void	ss(t_stack **stack_a, t_stack **stack_b);
+void	ss(t_stack **stack_a, t_stack **stack_b, int flag);
 void	rotate_stack(t_stack **stack, char stack_index);
-void	rr(t_stack **stack_a, t_stack **stack_b);
+void	rr(t_stack **stack_a, t_stack **stack_b, int flag);
 void	reverse_rotate_stack(t_stack **stack, char stack_index);
-void	rrr(t_stack **stack_a, t_stack **stack_b);
+void	rrr(t_stack **stack_a, t_stack **stack_b, int flag);
 void	push_to_stack(t_stack **src_stack, \
 	t_stack **dst_stack, char stack_index);
 void	free_stack(t_stack **stack);

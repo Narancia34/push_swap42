@@ -27,11 +27,12 @@ void	swap_stack(t_stack **stack, char stack_index)
 		ft_putstr_fd("sb\n", 1);
 }
 
-void	ss(t_stack **stack_a, t_stack **stack_b)
+void	ss(t_stack **stack_a, t_stack **stack_b, int flag)
 {
 	swap_stack(stack_a, 's');
 	swap_stack(stack_b, 's');
-	ft_putstr_fd("ss\n", 1);
+	if (flag == 1)
+		ft_putstr_fd("ss\n", 1);
 }
 
 void	rotate_stack(t_stack **stack, char stack_index)
@@ -54,9 +55,10 @@ void	rotate_stack(t_stack **stack, char stack_index)
 		ft_putstr_fd("rb\n", 1);
 }
 
-void	rr(t_stack **stack_a, t_stack **stack_b)
+void	rr(t_stack **stack_a, t_stack **stack_b, int flag)
 {
 	rotate_stack(stack_a, 'r');
 	rotate_stack(stack_b, 's');
-	ft_putstr_fd("rr\n", 1);
+	if (flag == 1)
+		ft_putstr_fd("rr\n", 1);
 }
