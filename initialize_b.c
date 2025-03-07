@@ -18,14 +18,14 @@ void	set_targets_b(t_stack *stack_a, t_stack *stack_b)
 	t_stack	*target;
 	long	best_match;
 
-
 	while (stack_b)
 	{
 		best_match = LONG_MAX;
 		current_a = stack_a;
 		while (current_a)
 		{
-			if (current_a->number > stack_b->number && current_a->number < best_match)
+			if (current_a->number > stack_b->number \
+			&& current_a->number < best_match)
 			{
 				best_match = current_a->number;
 				target = current_a;

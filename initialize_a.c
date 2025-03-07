@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "push_swap.h"
+#include "push_swap.h"
 
 void	set_targets_a(t_stack *stack_a, t_stack *stack_b)
 {
@@ -24,7 +24,8 @@ void	set_targets_a(t_stack *stack_a, t_stack *stack_b)
 		current_b = stack_b;
 		while (current_b)
 		{
-			if (stack_a->number > current_b->number && current_b->number > best_match)
+			if (stack_a->number > current_b->number \
+			&& current_b->number > best_match)
 			{
 				best_match = current_b->number;
 				target = current_b;

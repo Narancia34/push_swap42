@@ -52,7 +52,7 @@ void	check_args(char *arg)
 	clean_up(NULL, s_arg);
 }
 
-int	check_input(int ac, char **av)
+int	check_input(char **av)
 {
 	int	i;
 

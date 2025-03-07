@@ -17,8 +17,10 @@ int	main(int ac, char **av)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
+	if (ac < 2)
+		return (0);
 	stack_b = NULL;
-	check_input(ac, av);
+	check_input(av);
 	stack_a = create_stack(ac, av);
 	if (!stack_a)
 	{

@@ -84,9 +84,10 @@ void	handle_input(t_stack **a, t_stack **b)
 int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
-	t_stack	*stack_b = NULL;
+	t_stack	*stack_b;
 
-	check_input(ac, av);
+	stack_b = NULL;
+	check_input(av);
 	stack_a = create_stack(ac, av);
 	if (!stack_a)
 	{
@@ -101,7 +102,7 @@ int	main(int ac, char **av)
 		ft_putstr_fd("ko\n", 1);
 	}
 	else
-{
+	{
 		free_stack(&stack_a);
 		free_stack(&stack_b);
 		ft_putstr_fd("ok\n", 1);

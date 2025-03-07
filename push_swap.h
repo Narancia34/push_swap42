@@ -32,7 +32,7 @@ typedef struct s_stack
 	struct s_stack	*target;
 }	t_stack;
 
-int		check_input(int ac, char **av);
+int		check_input(char **av);
 int		stack_is_sorted(t_stack *stack);
 int		is_only_spaces(char *str);
 int		stack_len(t_stack *stack);

@@ -53,7 +53,8 @@ void	rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
 	set_median_index(*stack_b);
 }
 
-void	reverse_rotate_both(t_stack **stack_a, t_stack **stack_b, t_stack *cheapest)
+void	reverse_rotate_both(t_stack **stack_a, \
+	t_stack **stack_b, t_stack *cheapest)
 {
 	while ((*stack_b) != cheapest->target && (*stack_a) != cheapest)
 		rrr(stack_a, stack_b, 1);
